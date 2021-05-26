@@ -1,15 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
+import useApiCall from "../hooks/useApiCall";
 
 import Story from "./Story";
 
-import { getStories } from "../helpers/api";
-
 const HomePage = () => {
-  useEffect(() => {
-    getStories();
-  });
+  const [stories, loading] = useApiCall();
   return (
     <div className="story-container">
+      {console.log(stories)}
+      {console.log(loading)}
       <Story />
       <Story />
       <Story />

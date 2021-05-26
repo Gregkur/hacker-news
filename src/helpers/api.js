@@ -7,8 +7,8 @@ const getStory = async (id) => {
     const response = await fetch(`${BASE_URL}/item/${id}.json`);
     // Resolving the promise
     const story = await response.json();
-    console.log(story);
-    return story
+    // console.log(story);
+    return story;
   } catch (error) {
     console.log("Api error(single story)");
   }
