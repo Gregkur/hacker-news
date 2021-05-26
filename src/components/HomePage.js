@@ -7,12 +7,17 @@ const HomePage = () => {
   const [stories, loading] = useApiCall();
   return (
     <div className="story-container">
-      {console.log(stories)}
-      {console.log(loading)}
-      <Story />
-      <Story />
-      <Story />
-      <Story />
+      {loading ? (
+        <>
+          <h1>Loading...</h1>{" "}
+        </>
+      ) : (
+        <>
+          {stories.map((story) => (
+            <Story key={story.id} data={story} />
+          ))}{" "}
+        </>
+      )}
     </div>
   );
 };

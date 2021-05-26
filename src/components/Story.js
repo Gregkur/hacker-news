@@ -1,14 +1,18 @@
 import React from "react";
+import unixToDate from "../helpers/unix";
+
 import "../styles/StoryStyles.css";
 
-const Story = () => {
+const Story = ({ data: { by, title, descendants, time } }) => {
   return (
     <div className="story">
       <div className="story-title">
-        <p>Neovim 0.5 is overpowering</p>
+        <p>{title}</p>
       </div>
       <div className="story-info">
-        <p>by imbnwa | 5/26/2021, 4:56 PM | 31 comments</p>
+        <p>
+          by: {by} | {unixToDate(time)} | {descendants} comments
+        </p>
       </div>
     </div>
   );
