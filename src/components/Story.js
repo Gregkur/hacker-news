@@ -5,7 +5,7 @@ import unixToDate from "../helpers/unix";
 
 import "../styles/StoryStyles.css";
 
-const Story = ({ data: { by, title, descendants, time, url, id } }) => {
+const Story = ({ data: { by, title, descendants, time, url, id, kids } }) => {
   return (
     <div className="story">
       <div className="story-title">
@@ -16,7 +16,9 @@ const Story = ({ data: { by, title, descendants, time, url, id } }) => {
       <div className="story-info">
         <p>
           by: {by} | {unixToDate(time)} |{" "}
-          <Link to={`/stories/${id}`}>{descendants} comments</Link>
+          <Link to={{ pathname: `/stories/${id}`, state: kids }}>
+            {descendants} comments
+          </Link>
         </p>
       </div>
     </div>

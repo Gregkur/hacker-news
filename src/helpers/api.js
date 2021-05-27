@@ -7,10 +7,10 @@ const getStory = async (id) => {
     const response = await fetch(`${BASE_URL}/item/${id}.json`);
     // Resolving the promise
     const story = await response.json();
-    // console.log(story);
+    console.log(story);
     return story;
   } catch (error) {
-    console.log("Api error(single story)");
+    console.log("Api error (getting a single story)");
   }
 };
 
@@ -28,5 +28,17 @@ export const getStories = async () => {
     return stories;
   } catch (error) {
     console.log("Api error");
+  }
+};
+
+// Getting the Comments from the ID of a story
+export const getComments = async (ids) => {
+  try {
+    console.log("ids", ids);
+    const response = await Promise.all(ids.map((id) => getStory(id)));
+    console.log(response);
+    return response;
+  } catch (error) {
+    console.log("Api error (getting comments)");
   }
 };

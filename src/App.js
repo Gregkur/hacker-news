@@ -6,10 +6,6 @@ import HomePage from "./components/HomePage";
 import Comments from "./components/Comments";
 
 function App() {
-  const findStory = (id) => {
-    console.log("TODO", id);
-  };
-
   return (
     <BrowserRouter>
       <div className="container">
@@ -19,10 +15,7 @@ function App() {
           <Route
             path="/stories/:id"
             render={(routeProps) => (
-              <Comments
-                story={findStory(routeProps.match.params.id)}
-                {...routeProps}
-              />
+              <Comments ids={routeProps.location.state} />
             )}
           />
         </Switch>
