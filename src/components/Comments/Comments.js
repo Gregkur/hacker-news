@@ -1,8 +1,15 @@
 import React from "react";
-import useCommentApiCall from "../hooks/useCommentApiCall";
+import useCommentApiCall from "../../hooks/useCommentApiCall";
+import Thread from "./Thread";
 
 const Comments = ({ ids }) => {
   const [comments, loading] = useCommentApiCall(ids);
+
+  const mappedThreads = comments.map((thread) => (
+    <div className="thread-heading">
+      <Thread thread={thread} key={thread.id} />
+    </div>
+  ));
 
   return (
     <div className="container comment-container">
@@ -11,9 +18,7 @@ const Comments = ({ ids }) => {
           <h1>Loading...</h1>{" "}
         </>
       ) : (
-        <>
-          <p>mapped comments</p>
-        </>
+        <div className="threads">{mappedThreads}</div>
       )}
     </div>
   );

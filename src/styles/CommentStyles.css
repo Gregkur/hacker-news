@@ -1,0 +1,21 @@
+.threads {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 0 2em 0.5em;
+}
+.reply {
+  border-top: 1px solid #eee;
+  margin-left: 50px;
+  padding: 16px;
+}
+.thread {
+  padding: 20px;
+}
+.thread-heading {
+  border: 1px #00000014 solid;
+  margin: 0.6em 0em 0.6em;
+  background-color: #fff;
+  padding: 1.8em 2em 1em;
+}

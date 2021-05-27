@@ -3,13 +3,15 @@ import "./App.css";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 
 import HomePage from "./components/HomePage";
-import Comments from "./components/Comments";
+import Comments from "./components/Comments/Comments";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="container">
-        <Link to="/">Hacker News</Link>
+        <div className="nav">
+          <Link to="/">Hacker News</Link>
+        </div>
 
         <Switch>
           <Route path="/" component={HomePage} exact={true} />

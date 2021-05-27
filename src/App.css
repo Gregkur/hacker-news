@@ -1,6 +1,22 @@
+body {
+  background: #f2f3f5;
+}
 .container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
+.nav {
+  background-color: #ff6601;
+  height: 70px;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.nav > a {
+  text-decoration: none;
+  color: #ffff;
+  font-size: 2em;
+}
