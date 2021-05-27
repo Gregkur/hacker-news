@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 
 import HomePage from "./components/HomePage";
 import Comments from "./components/Comments";
@@ -9,7 +9,8 @@ function App() {
   return (
     <BrowserRouter>
       <div className="container">
-        <h1>Hacker News</h1>
+        <Link to="/">Hacker News</Link>
+
         <Switch>
           <Route path="/" component={HomePage} exact={true} />
           <Route

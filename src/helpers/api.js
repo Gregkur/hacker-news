@@ -5,9 +5,10 @@ const getStory = async (id) => {
   try {
     // Getting info about one story
     const response = await fetch(`${BASE_URL}/item/${id}.json`);
+
     // Resolving the promise
     const story = await response.json();
-    console.log(story);
+
     return story;
   } catch (error) {
     console.log("Api error (getting a single story)");
@@ -19,25 +20,42 @@ export const getStories = async () => {
   try {
     // Getting all the ID/s
     const response = await fetch(`${BASE_URL}/topstories.json`);
+
     // Getting the response in json
     const data = await response.json();
+
     // Getting info about every story
     const stories = await Promise.all(
       data.slice(0, 30).map((id) => getStory(id))
     );
+
     return stories;
   } catch (error) {
     console.log("Api error");
   }
 };
 
-// Getting the Comments from the ID of a story
+// Getting the Comments from the IDs of a story
 export const getComments = async (ids) => {
   try {
-    console.log("ids", ids);
-    const response = await Promise.all(ids.map((id) => getStory(id)));
-    console.log(response);
-    return response;
+    // Get details about every comment
+    const response = ids.map(async (id) => {
+      const comment = await getStory(id);
+      if (!comment.kids) return null;
+
+      // recursion to dig a level deeper
+      const comments = await getComments(comment.kids);
+      const object = {
+        ...comment,
+        comments: comments,
+      };
+      return object;
+    });
+
+    // Resolve all promises
+    const allComments = await Promise.all(response);
+
+    return allComments;
   } catch (error) {
     console.log("Api error (getting comments)");
   }

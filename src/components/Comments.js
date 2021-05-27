@@ -5,9 +5,16 @@ const Comments = ({ ids }) => {
   const [comments, loading] = useCommentApiCall(ids);
 
   return (
-    <div>
-      {console.log("loading", loading, "comments", comments)}
-      Comments page
+    <div className="container comment-container">
+      {loading ? (
+        <>
+          <h1>Loading...</h1>{" "}
+        </>
+      ) : (
+        <>
+          <p>mapped comments</p>
+        </>
+      )}
     </div>
   );
 };
