@@ -55,7 +55,12 @@ export const getComments = async (ids) => {
     // Resolve all promises
     const allComments = await Promise.all(response);
 
-    return allComments;
+    // Filtering the nil, dead and deleted comments
+    const filteredComments = allComments.filter(
+      (comment) => comment && !comment.dead && !comment.deleted
+    );
+
+    return filteredComments;
   } catch (error) {
     console.log("Api error (getting comments)");
   }
