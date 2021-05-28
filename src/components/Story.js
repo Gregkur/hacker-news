@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import unixToDate from "../helpers/unix";
+import { unixToDate } from "../helpers/timeHelpers";
 
 import "../styles/StoryStyles.css";
 

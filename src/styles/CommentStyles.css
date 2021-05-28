@@ -20,9 +20,19 @@
   padding: 1.8em 2em 1em;
 }
 .thread-title {
+  text-align: center;
   margin-bottom: 1em;
   width: 80%;
   background-color: #fff;
-  padding: 1.8em 2em 1em;
+  padding: 1.8em 2em 1.8em;
   box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+  font-weight: 500;
+}
+.reply-by {
+  font-size: 0.8em;
+  background-color: #f2f3f5;
+  padding: 0.2em;
+}
+.reply-by span {
+  margin-left: 0.1em;
 }

@@ -37,6 +37,7 @@ export const getStories = async () => {
 
 // Getting the Comments from the IDs of a story
 export const getComments = async (ids) => {
+  // console.log(ids)
   try {
     // Get details about every comment
     const response = ids.map(async (id) => {
@@ -45,6 +46,7 @@ export const getComments = async (ids) => {
 
       // recursion to dig a level deeper
       const comments = await getComments(comment.kids);
+
       const object = {
         ...comment,
         comments: comments,
