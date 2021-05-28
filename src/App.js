@@ -18,7 +18,10 @@ function App() {
           <Route
             path="/stories/:id"
             render={(routeProps) => (
-              <Comments ids={routeProps.location.state} />
+              <Comments
+                ids={routeProps.location.kids}
+                title={routeProps.location.title}
+              />
             )}
           />
         </Switch>
