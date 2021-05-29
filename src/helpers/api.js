@@ -15,18 +15,29 @@ const getStory = async (id) => {
   }
 };
 
+const slicer = (stories) => {
+  let storiesArray = [];
+  // console.log(counter);
+  while (stories.length) {
+    storiesArray.push(stories.splice(0, 20));
+  }
+  // console.log("parsed", parsed);
+  return storiesArray;
+};
+
 // Getting the ID's of top stories
-export const getStories = async () => {
+export const getStories = async (page) => {
   try {
     // Getting all the ID/s
     const response = await fetch(`${BASE_URL}/topstories.json`);
 
     // Getting the response in json
     const data = await response.json();
+    const storiesArray = slicer(data);
 
     // Getting info about every story
     const stories = await Promise.all(
-      data.slice(0, 30).map((id) => getStory(id))
+      storiesArray[page].map((id) => getStory(id))
     );
 
     return stories;

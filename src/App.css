@@ -34,3 +34,32 @@ body {
   width: 35px;
   height: 35px;
 }
+.button-container {
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  width: 25%;
+  box-sizing: border-box;
+  text-align: center;
+  width: 80%;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+  font-weight: 400;
+}
+.btn {
+  margin: 0em 2em;
+  border: none;
+  background: transparent;
+  text-align: center;
+  font: unset;
+  padding: 1em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.btn:hover {
+  color: #f68423;
+}
+.btn:disabled {
+  cursor: default;
+  color: -internal-light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
+}

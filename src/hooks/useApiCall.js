@@ -2,16 +2,17 @@ import { useState, useEffect } from "react";
 
 import { getStories } from "../helpers/api";
 
-const useApiCall = () => {
+const useApiCall = (page) => {
   const [loading, setLoading] = useState(true);
   const [stories, setStories] = useState([]);
 
   useEffect(() => {
-    getStories().then((stories) => {
+    setLoading(true);
+    getStories(page).then((stories) => {
       setStories(stories);
       setLoading(false);
     });
-  }, []);
+  }, [page]);
   return [stories, loading];
 };
 export default useApiCall;

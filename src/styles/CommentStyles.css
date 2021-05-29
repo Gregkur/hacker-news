@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 .reply {
-  border-top: 1px solid #eee;
+  border-left: 1px solid #eee;
   margin-left: 10px;
   padding: 16px;
   overflow: auto;
@@ -29,6 +29,14 @@
   padding: 1.8em 2em 1.8em;
   box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
   font-weight: 400;
+}
+.thread-title a {
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s;
+}
+.thread-title a:hover {
+  color: #ff6601;
 }
 .reply-by {
   color: #0000008c;

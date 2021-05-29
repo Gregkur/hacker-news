@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import { getComments } from "../helpers/api";
 
-const useCommentApiCall = (ids, title) => {
+const useCommentApiCall = (ids, title, url) => {
   const [loading, setLoading] = useState(true);
   const [comments, setComments] = useState([]);
 
@@ -13,6 +13,7 @@ const useCommentApiCall = (ids, title) => {
       setLoading(false);
       window.localStorage.setItem("ids", JSON.stringify(ids));
       title !== undefined && window.localStorage.setItem("title", title);
+      title !== undefined && window.localStorage.setItem("url", url);
     });
   }, []);
   return [comments, loading];

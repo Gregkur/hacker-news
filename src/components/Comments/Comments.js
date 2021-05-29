@@ -3,11 +3,12 @@ import useCommentApiCall from "../../hooks/useCommentApiCall";
 import Spinner from "../Spinner";
 import Thread from "./Thread";
 
-const Comments = ({ ids, title }) => {
+const Comments = ({ ids, title, url }) => {
   const savedIds = JSON.parse(window.localStorage.getItem("ids"));
   const savedTitle = window.localStorage.getItem("title");
+  const savedUrl = window.localStorage.getItem("url");
 
-  const [comments, loading] = useCommentApiCall(ids || savedIds, title);
+  const [comments, loading] = useCommentApiCall(ids || savedIds, title, url);
 
   const mappedThreads = comments.map((thread) => (
     <div className="thread-heading">
@@ -21,7 +22,11 @@ const Comments = ({ ids, title }) => {
         <Spinner />
       ) : (
         <>
-          <div className="thread-title">{title || savedTitle}</div>
+          <div className="thread-title">
+            <a href={url || savedUrl} target="_blank" rel="noreferrer">
+              {title || savedTitle}
+            </a>
+          </div>
           <div className="threads">{mappedThreads}</div>
         </>
       )}

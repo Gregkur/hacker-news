@@ -1,21 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
+import {Link} from 'react-router-dom'
 import useApiCall from "../hooks/useApiCall";
 
 import Story from "./Story";
 import Spinner from "./Spinner";
 
 const HomePage = () => {
-  const [stories, loading] = useApiCall();
+  const [page, setPage] = useState(0);
+  const [stories, loading] = useApiCall(page);
+
+  const handleClick = () => {
+    setPage(page + 1);
+  };
   return (
     <>
       {loading ? (
         <Spinner />
       ) : (
-        <div className="story-container">
-          {stories.map((story) => (
-            <Story key={story.id} data={story} />
-          ))}{" "}
-        </div>
+        <>
+           <Link
+              to={{
+                pathname: `/top/${page}`,
+                stories:stories
+              }}
+              onClick={handleClick}>
+              next
+            </Link>
+          <div className="story-container">
+            {stories.map((story) => (
+              <Story key={story.id} data={story} />
+            ))}{" "}
+          </div>
+        </>
       )}
     </>
   );
