@@ -1,5 +1,7 @@
 import React from "react";
 
+import { v4 as uuidv4 } from "uuid";
+
 import { unixToDate } from "../../helpers/timeHelpers";
 
 import "../../styles/CommentStyles.css";
@@ -14,9 +16,13 @@ const Thread = ({ thread }) => {
         className="thread"
         dangerouslySetInnerHTML={{ __html: thread.text }}></div>
       {replies().map((reply) => (
-          <div className="reply" innerHTML={{ __html: reply.text }}>
-            <Thread thread={reply} key={reply.id} />
-          </div>
+        <div className="reply" key={uuidv4()}>
+          <Thread
+            thread={reply}
+            key={uuidv4()}
+            dangerouslySetInnerHTML={{ __html: reply.text }}
+          />
+        </div>
       ))}
     </>
   );

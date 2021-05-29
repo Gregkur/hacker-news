@@ -17,11 +17,10 @@ const getStory = async (id) => {
 
 const slicer = (stories) => {
   let storiesArray = [];
-  // console.log(counter);
+  // Slicing the stories into 25 arrays
   while (stories.length) {
     storiesArray.push(stories.splice(0, 20));
   }
-  // console.log("parsed", parsed);
   return storiesArray;
 };
 
@@ -48,7 +47,6 @@ export const getStories = async (page) => {
 
 // Getting the Comments from the IDs of a story
 export const getComments = async (ids) => {
-  // console.log(ids)
   try {
     // Get details about every comment
     const response = ids.map(async (id) => {

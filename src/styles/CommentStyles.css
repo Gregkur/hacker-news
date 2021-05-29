@@ -6,12 +6,7 @@
   padding: 0.2em 0.5em;
   box-sizing: border-box;
 }
-.reply {
-  border-left: 1px solid #eee;
-  margin-left: 10px;
-  padding: 16px;
-  overflow: auto;
-}
+
 .thread {
   padding: 20px;
   overflow: auto;
@@ -37,6 +32,13 @@
 }
 .thread-title a:hover {
   color: #ff6601;
+}
+
+.reply {
+  border-left: 1px solid #eee;
+  margin-left: 10px;
+  padding: 16px;
+  overflow: auto;
 }
 .reply-by {
   color: #0000008c;

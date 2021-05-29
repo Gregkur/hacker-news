@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  background: #f2f3f5;
+  font-family: "Roboto", sans-serif;
+}
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@import "./CommentStyles.css";
+@import "./PartsStyles.css";
+@import "./SpinnerStyles.css";
+@import "./StoryStyles.css";

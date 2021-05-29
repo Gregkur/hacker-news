@@ -1,9 +1,8 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
-import { unixToDate } from "../helpers/timeHelpers";
+import { unixToDate } from "../../helpers/timeHelpers";
 
-import "../styles/StoryStyles.css";
+import "../../styles/StoryStyles.css";
 
 const Story = ({
   data: { by, title, descendants, time, url, id, kids, score },
