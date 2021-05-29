@@ -49,3 +49,20 @@
 .reply-by span {
   margin-left: 0.1em;
 }
+/* Smartphones */
+@media only screen and (min-device-width: 320px) and (max-device-width: 650px) {
+  .thread-title {
+    width: 100%;
+  }
+  .threads {
+    width: 100%;
+    padding: unset;
+  }
+  .thread {
+    width: 100%;
+    padding: 3px;
+  }
+  .reply {
+    padding: unset;
+  }
+}

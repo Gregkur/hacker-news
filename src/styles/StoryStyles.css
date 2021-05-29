@@ -6,7 +6,19 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
 }
-
+/* Smartphones */
+@media only screen and (min-device-width: 320px) and (max-device-width: 650px) {
+  .stories-container {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
+/* Tablets */
+@media only screen and (min-device-width: 767px) and (max-device-width: 1024px) {
+  .stories-container {
+    width: 100%;
+  }
+}
 .story {
   display: flex;
   flex-direction: column;

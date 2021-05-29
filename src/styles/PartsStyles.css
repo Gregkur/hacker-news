@@ -39,11 +39,26 @@
   font-weight: 400;
   padding: 1.3em;
 }
-
 .number-container {
   width: 80%;
   display: flex;
   justify-content: space-evenly;
+}
+/* Smartphones */
+@media only screen and (min-device-width: 320px) and (max-device-width: 650px) {
+  .number-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 1fr;
+  }
+}
+/* Tablets */
+@media only screen and (min-device-width: 767px) and (max-device-width: 1024px) {
+  .number-container {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: 1fr;
+  }
 }
 .number {
   height: 2em;

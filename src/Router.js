@@ -1,10 +1,10 @@
-import "./styles/Index.css";
-
 import { Route, Switch, Redirect } from "react-router-dom";
 
 import Comments from "./components/Comments/Comments";
 import Stories from "./components/Stories/Stories";
 import Navbar from "./components/Parts/Navbar";
+
+import "./styles/Index.css";
 
 function App() {
   return (
