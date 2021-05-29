@@ -15,7 +15,7 @@ const Story = ({ data: { by, title, descendants, time, url, id, kids } }) => {
       </div>
       <div className="story-info">
         <p>
-          by: {by} | {unixToDate(time)} |{" "}
+          by: <span>{by}</span> | {unixToDate(time)} |{" "}
           <Link to={{ pathname: `/stories/${id}`, kids: kids, title: title }}>
             {descendants} comments
           </Link>

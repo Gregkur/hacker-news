@@ -18,7 +18,7 @@ const Comments = ({ ids, title }) => {
   return (
     <div className="container comment-container">
       {loading ? (
-       <Spinner/>
+        <Spinner />
       ) : (
         <>
           <div className="thread-title">{title || savedTitle}</div>

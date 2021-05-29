@@ -10,7 +10,17 @@ function App() {
     <BrowserRouter>
       <div className="container">
         <div className="nav">
-          <Link to="/">Hacker News</Link>
+          <div className="logo-container">
+            <Link to="/">
+              <img
+                src="https://cdn2.iconfinder.com/data/icons/social-flat-buttons-3/512/hacker_news-512.png"
+                alt="logo"
+                className="logo"></img>
+            </Link>
+            <Link to="/">
+              <h1>Hacker News</h1>
+            </Link>
+          </div>
         </div>
 
         <Switch>

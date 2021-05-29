@@ -8,13 +8,24 @@
 }
 
 .story {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: #fff;
-  padding: 20px 30px 20px 80px;
+  padding: 10px 80px 10px 80px;
   border-bottom: 1px solid #eee;
   line-height: 20px;
+  align-items: flex-start;
 }
 .story a {
   text-decoration: none;
+  transition: all 0.3s;
+}
+.story a:hover {
+  color: #f68423;
+}
+.story-title {
+  margin-top: 15px;
 }
 .story-title a {
   color: black;
@@ -23,8 +34,12 @@
 .story-info p {
   color: black;
   font-weight: 200;
+  font-size: 0.8em;
 }
 .story-info p a {
   color: black;
+  font-weight: 400;
+}
+.story-info span {
   font-weight: 400;
 }

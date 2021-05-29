@@ -1,5 +1,6 @@
 body {
   background: #f2f3f5;
+  font-family: "Roboto", sans-serif;
 }
 .container {
   width: 100%;
@@ -8,15 +9,28 @@ body {
   align-items: center;
 }
 .nav {
-  background-color: #ff6601;
+  background-color: #f68423;
   height: 70px;
   width: 100%;
   justify-content: center;
   display: flex;
   align-items: center;
 }
-.nav > a {
+.logo-container {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo-container > a {
   text-decoration: none;
-  color: #ffff;
-  font-size: 2em;
+}
+.nav h1 {
+  color: white;
+  font-weight: 300;
+}
+.logo {
+  border: 1px white solid;
+  width: 35px;
+  height: 35px;
 }

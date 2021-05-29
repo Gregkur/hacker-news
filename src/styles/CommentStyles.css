@@ -3,32 +3,35 @@
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
-  padding: 0 2em 0.5em;
+  padding: 0.2em 0.5em;
+  box-sizing: border-box;
 }
 .reply {
   border-top: 1px solid #eee;
   margin-left: 10px;
   padding: 16px;
+  overflow: auto;
 }
 .thread {
   padding: 20px;
+  overflow: auto;
 }
 .thread-heading {
-  border: 1px #00000014 solid;
-  margin: 0.6em 0em 0.6em;
   background-color: #fff;
   padding: 1.8em 2em 1em;
 }
 .thread-title {
+  box-sizing: border-box;
   text-align: center;
   margin-bottom: 1em;
   width: 80%;
   background-color: #fff;
   padding: 1.8em 2em 1.8em;
   box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
-  font-weight: 500;
+  font-weight: 400;
 }
 .reply-by {
+  color: #0000008c;
   font-size: 0.8em;
   background-color: #f2f3f5;
   padding: 0.2em;
